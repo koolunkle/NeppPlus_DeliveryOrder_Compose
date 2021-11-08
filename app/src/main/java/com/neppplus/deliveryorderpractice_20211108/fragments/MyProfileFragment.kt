@@ -1,5 +1,6 @@
 package com.neppplus.deliveryorderpractice_20211108.fragments
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -34,6 +35,23 @@ class MyProfileFragment : Fragment() {
 
         }
 
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == REQ_CODE_NICKNAME) {
+
+            if (resultCode == Activity.RESULT_OK) {
+
+                val newNickname = data!!.getStringExtra("nick")
+
+                txtNickname.text = newNickname
+
+            }
+
+        }
 
     }
 
