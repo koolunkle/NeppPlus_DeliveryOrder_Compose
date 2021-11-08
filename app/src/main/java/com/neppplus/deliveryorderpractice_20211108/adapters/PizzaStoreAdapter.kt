@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.neppplus.deliveryorder_20211108.datas.StoreData
 import com.neppplus.deliveryorderpractice_20211108.R
 
@@ -37,6 +38,11 @@ class PizzaStoreAdapter(
 //  * 우리가 지정한 id를 기반으로 imgLogo & txtStoreName의 데이터를 찾자!
 //  * imgLogo -> ImageView & txtStoreName -> TextView 등 각 타입에 맞는 값을 찾자!
 
+    txtStoreName.text = data.name
+//  * 기입된 name을 txtStoreName에 출력하자!
+    Glide.with(mContext).load(data.logoURL).into(imgLogo)
+//  * Glide 라이브러리를 활용하여 이미지를 직접 추가하지 않고(drawable) 주소만 받아 불러오자!
+//  * 위 과정을 통해 용량 효울을 높일 수 있다.
     return row
     }
 
