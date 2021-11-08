@@ -14,6 +14,9 @@
         android:theme="@style/Theme.DeliveryOrderPractice_20211108"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".EditNicknameActivity"
+            android:exported="true" />
+        <activity
             android:name=".ViewStoreDetailActivity"
             android:exported="true" />
         <activity
