@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.neppplus.deliveryorder_20211108.ViewStoreDetailActivity
 import com.neppplus.deliveryorder_20211108.adapters.PizzaStoreAdapter
 import com.neppplus.deliveryorder_20211108.datas.StoreData
 import com.neppplus.deliveryorderpractice_20211108.R
@@ -49,7 +50,7 @@ class PizzaStoreListFragment : Fragment() {
 
             val clickedStore =  mPizzaStoreList[position]
 //          * 클릭된 가게별 데이터를 담아두자!
-            val myIntent = Intent(requireContext(), ??)
+            val myIntent = Intent(requireContext(), ViewStoreDetailActivity::class.java)
             myIntent.putExtra("store", clickedStore)
 //          * Serializable를 활용하여 putExtra의 에러를 해결하자!
             startActivity(myIntent)
