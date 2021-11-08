@@ -29,6 +29,10 @@ class MainActivity : AppCompatActivity() {
         mainViewPager.adapter = mvpa
 //  * fun setupEvents() & fun setValues() 우리가 원하는 함수를 정의하자!
 //  * supportFragmentManager의 도움을 받아 View에 우리가 원하는 데이터를 적용(연결)하자!
+
+        mainTabLayout.setupWithViewPager(mainViewPager)
+//      * setupWithViewPager : ViewPager를 토대로 TabLayout을 구성한다.
+
     }
 
 }
