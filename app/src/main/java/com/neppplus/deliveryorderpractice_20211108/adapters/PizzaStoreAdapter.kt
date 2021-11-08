@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.ImageView
+import android.widget.TextView
 import com.neppplus.deliveryorder_20211108.datas.StoreData
 import com.neppplus.deliveryorderpractice_20211108.R
 
@@ -27,7 +29,15 @@ class PizzaStoreAdapter(
 //      * 위 과정을 통해 용량 효율을 높일 수 있다. (재사용성)
         val row =  tempRow!!
 //      * 위 과정을 통해 tempRow는 절대 null 상태가 될 수 없으므로 !!를 입력한다.
-        return row
+
+    val data = mList[position]
+
+    val imgLogo = row.findViewById<ImageView>(R.id.imgLogo)
+    val txtStoreName = row.findViewById<TextView>(R.id.txtStoreName)
+//  * 우리가 지정한 id를 기반으로 imgLogo & txtStoreName의 데이터를 찾자!
+//  * imgLogo -> ImageView & txtStoreName -> TextView 등 각 타입에 맞는 값을 찾자!
+
+    return row
     }
 
 }
