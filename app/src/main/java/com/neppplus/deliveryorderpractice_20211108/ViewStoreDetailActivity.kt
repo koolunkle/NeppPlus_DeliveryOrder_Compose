@@ -1,8 +1,14 @@
 package com.neppplus.deliveryorder_20211108
 
+import android.Manifest
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.bumptech.glide.Glide
+import com.gun0912.tedpermission.PermissionListener
+import com.gun0912.tedpermission.normal.TedPermission
 import com.neppplus.deliveryorder_20211108.datas.StoreData
 import com.neppplus.deliveryorderpractice_20211108.R
 import kotlinx.android.synthetic.main.activity_view_store_detail.*
@@ -25,6 +31,32 @@ class ViewStoreDetailActivity : AppCompatActivity() {
 
         btnCall.setOnClickListener {
 //      * 버튼 클릭 이벤트를 지정하자!
+
+            val pl = object  : PermissionListener {
+                override fun onPermissionGranted() {
+//              * 권한을 획득했을 때의 작업을 처리하자!
+                    val myUri = Uri.parse("tel:${mStoreData.phoneNum}")
+                    val myIntent = Intent( Intent.ACTION_CALL, myUri )
+                    startActivity(myIntent)
+//                  * 전화번호 데이터를 가져와 전화화면으로 전환시키자!
+                }
+
+                override fun onPermissionDenied(deniedPermissions: MutableList<String>?) {
+//              * 권한이 거부되었을 때 작업을 처리하자!
+                    Toast.makeText(
+                        this@ViewStoreDetailActivity,
+                        "권한이 거부되어 전화 불가.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+//                  * "권한이 거부되어 전화 불가."라는 문구를 띄우자!
+                }
+
+            }
+
+            TedPermission.create()
+                .setPermissionListener( pl )
+                .setPermissions(Manifest.permission.CALL_PHONE)
+                .check()
 
 
         }
