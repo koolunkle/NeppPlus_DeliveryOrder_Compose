@@ -3,6 +3,7 @@
     package="com.neppplus.deliveryorderpractice_20211108">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"

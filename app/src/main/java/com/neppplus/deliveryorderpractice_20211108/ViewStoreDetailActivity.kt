@@ -23,6 +23,12 @@ class ViewStoreDetailActivity : AppCompatActivity() {
 
     fun setupEvents() {
 
+        btnCall.setOnClickListener {
+//      * 버튼 클릭 이벤트를 지정하자!
+
+
+        }
+
     }
 
     fun setValues() {
