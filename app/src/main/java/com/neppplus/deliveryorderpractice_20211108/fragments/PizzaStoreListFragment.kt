@@ -19,4 +19,13 @@ class PizzaStoreListFragment : Fragment() {
 //      * fragment_pizza_store_list xml 파일을 객체화하여 불러온다.
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+//      * onActivityCreated : Fragment에 View가 생성되고 난후 이를 Activity에 적용한다.
+        super.onActivityCreated(savedInstanceState)
+
+//        동작 관련 코드 작성 예정
+
+    }
+
+
 }
