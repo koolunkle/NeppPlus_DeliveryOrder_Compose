@@ -1,5 +1,6 @@
 package com.neppplus.deliveryorder_20211108.fragments
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -39,6 +40,23 @@ class MyProfileFragment : Fragment() {
 
         }
 
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+//  * onActivityResult : Activity에서 최종 결과물을 확인
+        if (requestCode == REQ_CODE_NICKNAME) {
+
+            if (resultCode == Activity.RESULT_OK) {
+
+                val newNickname =  data!!.getStringExtra("nick")
+
+                txtNickname.text = newNickname
+//      * 정상적으로 데이터 호출 및 액티비티 종료가 이루어졌다면 새 닉네임을 반영
+            }
+
+        }
 
     }
 
