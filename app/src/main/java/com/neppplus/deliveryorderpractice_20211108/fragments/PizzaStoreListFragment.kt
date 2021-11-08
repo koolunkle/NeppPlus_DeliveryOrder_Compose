@@ -1,5 +1,6 @@
 package com.neppplus.deliveryorder_20211108.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -43,6 +44,19 @@ class PizzaStoreListFragment : Fragment() {
 //      * 적용(연결)시킬 화면에 맞는 코드를 입력하자! (this Vs. requireContext)
         pizzaStoreListView.adapter = mPizzaStoreAdapter
 //      * ListView에 데이터를 적용(연결)시키자
+
+        pizzaStoreListView.setOnItemClickListener { adapterView, view, position, l ->
+
+            val clickedStore =  mPizzaStoreList[position]
+//          * 클릭된 가게별 데이터를 담아두자!
+            val myIntent = Intent(requireContext(), ??)
+            myIntent.putExtra("store", clickedStore)
+//          * Serializable를 활용하여 putExtra의 에러를 해결하자!
+            startActivity(myIntent)
+//          * 클릭된 가게와 맞는 가게 데이터를 담아 화면을 전환하자!
+
+
+        }
 
     }
 
