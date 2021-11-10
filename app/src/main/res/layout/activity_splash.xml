@@ -8,9 +8,11 @@
     android:gravity="center"
     tools:context=".SplashActivity">
 
-    <ImageView
+    <com.airbnb.lottie.LottieAnimationView
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@mipmap/ic_delivery" />
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/splash_ani"/>
 
 </LinearLayout>
