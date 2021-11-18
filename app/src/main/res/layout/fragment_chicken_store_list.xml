@@ -5,10 +5,9 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="치킨 가게 목록 프래그먼트"
-        android:textSize="20sp" />
+    <ListView
+        android:id="@+id/chickenStoreListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>
