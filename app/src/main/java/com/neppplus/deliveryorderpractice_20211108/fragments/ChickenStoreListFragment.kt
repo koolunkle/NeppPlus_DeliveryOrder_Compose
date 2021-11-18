@@ -1,11 +1,13 @@
 package com.neppplus.deliveryorderpractice_20211108.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.neppplus.deliveryorderpractice_20211108.R
+import com.neppplus.deliveryorderpractice_20211108.ViewStoreDetailActivity
 import com.neppplus.deliveryorderpractice_20211108.adapters.ChickenStoreAdapter
 import com.neppplus.deliveryorderpractice_20211108.datas.StoreData
 import kotlinx.android.synthetic.main.fragment_chicken_store_list.*
@@ -36,6 +38,18 @@ class ChickenStoreListFragment : Fragment() {
 
         mChickenStoreAdapter = ChickenStoreAdapter(requireContext(), R.layout.store_list_item, mChickenStoreList)
         chickenStoreListView.adapter = mChickenStoreAdapter
+
+
+        chickenStoreListView.setOnItemClickListener { adapterView, view, position, l ->
+
+            val clickedStore = mChickenStoreList[position]
+
+            val myIntent = Intent(requireContext(), ViewStoreDetailActivity::class.java)
+            myIntent.putExtra("store", clickedStore)
+            startActivity(myIntent)
+
+
+        }
 
 
     }
