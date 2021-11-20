@@ -26,22 +26,39 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="가게 이름"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:text="가게 이름" />
 
     <TextView
         android:id="@+id/txtStoreName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="실제 이름 자리"
         android:layout_marginTop="5dp"
+        android:text="실제 이름 자리"
         android:textSize="18sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="대표 전화번호"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="40dp"
+        android:text="공식 홈페이지 주소" />
+
+    <TextView
+        android:id="@+id/txtAddressLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:autoLink="web"
+        android:linksClickable="true"
+        android:text="실제 주소 링크"
+        android:textColorLink="@color/design_default_color_primary"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="대표 전화번호" />
 
     <LinearLayout
         android:layout_width="match_parent"
