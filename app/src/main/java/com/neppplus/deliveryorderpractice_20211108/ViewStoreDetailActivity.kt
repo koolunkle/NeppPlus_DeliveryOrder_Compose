@@ -51,6 +51,14 @@ class ViewStoreDetailActivity : AppCompatActivity() {
 
         }
 
+        txtAddressLink.setOnClickListener {
+
+            val myUri = Uri.parse("${mStoreData.addressLink}")
+            val myIntent = Intent( Intent.ACTION_VIEW, myUri )
+            startActivity(myIntent)
+
+        }
+
     }
 
     fun setValues() {
@@ -59,6 +67,7 @@ class ViewStoreDetailActivity : AppCompatActivity() {
 
         txtStoreName.text = mStoreData.name
         txtPhoneNum.text = mStoreData.phoneNum
+        txtAddressLink.text = mStoreData.addressLink
 
         Glide.with(this).load(mStoreData.logoURL).into(imgLogo)
 
