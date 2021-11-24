@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     fun setValues() {
         mvpa = MainViewPagerAdapter(supportFragmentManager)
         mainViewPager.adapter = mvpa
+        mainViewPager.offscreenPageLimit = 3
 
         mainTabLayout.setupWithViewPager(mainViewPager)
 
