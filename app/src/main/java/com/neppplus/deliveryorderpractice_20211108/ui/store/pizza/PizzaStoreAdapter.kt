@@ -1,4 +1,4 @@
-package com.neppplus.deliveryorderpractice_20211108.adapters
+package com.neppplus.deliveryorderpractice_20211108.ui.store.pizza
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,32 +9,30 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.neppplus.deliveryorderpractice_20211108.R
-import com.neppplus.deliveryorderpractice_20211108.datas.StoreData
+import com.neppplus.deliveryorderpractice_20211108.model.StoreData
 
-class ChickenStoreAdapter(
-    val mContext: Context,
+class PizzaStoreAdapter(
+    private val mContext: Context,
     resId: Int,
-    val mList: ArrayList<StoreData>
+    private val mList: ArrayList<StoreData>
 ) : ArrayAdapter<StoreData>(mContext, resId, mList) {
 
-    val mInflater = LayoutInflater.from(mContext)
+    private val mInflater: LayoutInflater = LayoutInflater.from(mContext)
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-
         var tempRow = convertView
+
         if (tempRow == null) {
             tempRow = mInflater.inflate(R.layout.store_list_item, null)
         }
 
         val row = tempRow!!
-
         val data = mList[position]
 
         val imgLogo = row.findViewById<ImageView>(R.id.imgLogo)
         val txtStoreName = row.findViewById<TextView>(R.id.txtStoreName)
 
         txtStoreName.text = data.name
-
         Glide.with(mContext).load(data.logoURL).into(imgLogo)
 
         return row

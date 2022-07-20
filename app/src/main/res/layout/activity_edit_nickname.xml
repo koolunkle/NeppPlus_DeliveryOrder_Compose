@@ -1,24 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dp"
-    tools:context=".EditNicknameActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <EditText
-        android:id="@+id/edtNewNickname"
+    <data>
+
+        <variable
+            name="activity"
+            type="com.neppplus.deliveryorderpractice_20211108.ui.nickname.EditNicknameActivity" />
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="새 닉네임 입력"
-        android:singleLine="true" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp"
+        tools:context=".ui.nickname.EditNicknameActivity">
 
-    <Button
-        android:id="@+id/btnOk"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="닉네임 변경 확인" />
+        <EditText
+            android:id="@+id/edtNickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="username"
+            android:hint="@string/input_new_nickname"
+            android:inputType="text"
+            android:singleLine="true" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btnConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> activity.setResultIntent()}"
+            android:text="@string/confirm_new_nickname" />
+
+    </LinearLayout>
+
+</layout>

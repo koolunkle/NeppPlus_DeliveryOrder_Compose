@@ -1,4 +1,4 @@
-package com.neppplus.deliveryorderpractice_20211108.datas
+package com.neppplus.deliveryorderpractice_20211108.model
 
 import java.io.Serializable
 
@@ -6,7 +6,5 @@ class StoreData(
     val name: String,
     val phoneNum: String,
     val logoURL: String,
-    val addressLink: String) : Serializable {
-
-
-}
+    val addressLink: String
+) : Serializable

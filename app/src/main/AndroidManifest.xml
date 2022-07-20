@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.neppplus.deliveryorderpractice_20211108">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,29 +13,33 @@
         android:roundIcon="@mipmap/ic_delivery_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DeliveryOrderPractice_20211108"
-        android:usesCleartextTraffic="true">
-        <activity
-            android:name=".SplashActivity"
-            android:exported="true" >
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m">
 
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-
-
-        </activity>
         <activity
-            android:name=".EditNicknameActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ViewStoreDetailActivity"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".ui.splash.SplashActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:exported="true"
+            android:permission="" />
+
+        <activity
+            android:name=".ui.store.info.StoreInfoActivity"
+            android:exported="true"
+            android:permission="" />
+
+        <activity
+            android:name=".ui.nickname.EditNicknameActivity"
+            android:exported="true"
+            android:permission="" />
+
     </application>
 
 </manifest>
