@@ -24,8 +24,8 @@
 
     <string-array name="chicken_addressLink">
         <item>"https://www.bbq.co.kr/main.asp"</item>
-        <item>"https://nenechicken.com/index.asp"</item>
-        <item>"https://www.goobne.co.kr/"</item>
+        <item>"https://nenechicken.com/"</item>
+        <item>"https://www.goobne.co.kr/index"</item>
         <item>"https://pelicana.co.kr/main.html"</item>
     </string-array>
 
@@ -52,9 +52,9 @@
     </string-array>
 
     <string-array name="pizza_addressLink">
-        <item>"https://www.pizzahut.co.kr/main"</item>
+        <item>"https://www.pizzahut.co.kr/"</item>
         <item>"https://pji.co.kr/w_main"</item>
         <item>"https://www.mrpizza.co.kr/"</item>
-        <item>"https://web.dominos.co.kr/gate"</item>
+        <item>"https://web.dominos.co.kr/main"</item>
     </string-array>
 </resources>
