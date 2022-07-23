@@ -39,7 +39,7 @@ class ProfileFragment : Fragment() {
         resultLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
                 if (it.resultCode == Activity.RESULT_OK) {
-                    val newNickname = it.data?.getStringExtra("nick")
+                    val newNickname = it.data?.getStringExtra("nickname")
                     txtNickname.text = newNickname
 
                     Toast.makeText(
