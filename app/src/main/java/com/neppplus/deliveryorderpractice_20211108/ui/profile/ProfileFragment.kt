@@ -7,17 +7,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.databinding.DataBindingUtil
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.Button
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.fragment.app.Fragment
+import com.google.accompanist.appcompattheme.AppCompatTheme
 import com.neppplus.deliveryorderpractice_20211108.R
-import com.neppplus.deliveryorderpractice_20211108.databinding.FragmentProfileBinding
 import com.neppplus.deliveryorderpractice_20211108.ui.nickname.EditNicknameActivity
 
 class ProfileFragment : Fragment() {
-
-    private lateinit var binding: FragmentProfileBinding
 
     private lateinit var resultLauncher: ActivityResultLauncher<Intent>
 
@@ -26,33 +36,61 @@ class ProfileFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil
-            .inflate<FragmentProfileBinding>(inflater, R.layout.fragment_profile, container, false)
-            .apply {
-                fragment = this@ProfileFragment
-                setActivityResult()
+        return ComposeView(requireContext()).apply {
+            setContent {
+                AppCompatTheme {
+                    ProfilePreview()
+                }
             }
-        return binding.root
+        }
     }
 
-    private fun FragmentProfileBinding.setActivityResult() {
-        resultLauncher =
-            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-                if (it.resultCode == Activity.RESULT_OK) {
-                    val newNickname = it.data?.getStringExtra("nickname")
-                    txtNickname.text = newNickname
+    @Composable
+    fun ProfileDraw() {
+        val modifier = Modifier.fillMaxWidth()
+        var content by rememberSaveable { mutableStateOf(resources.getString(R.string.koolunkle)) }
 
-                    Toast.makeText(
-                        requireContext(),
-                        resources.getString(R.string.complete_new_nickname),
-                        Toast.LENGTH_SHORT
-                    ).show()
+        Column(modifier = Modifier.padding(20.dp)) {
+            Text(text = resources.getString(R.string.nickname))
+            Row(
+                modifier = modifier,
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(content)
+                Button(onClick = { resultLauncherActivity() }) {
+                    Text(text = resources.getString(R.string.change_nickname))
+                }
+            }
+        }
+
+        resultLauncher =
+            rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+                if (it.resultCode == Activity.RESULT_OK) {
+                    content = it.data?.getStringExtra("nickname").toString()
+                    showToast()
                 }
             }
     }
 
-    fun editNicknameListener() {
-        val intent = Intent(requireActivity(), EditNicknameActivity::class.java)
+    @Preview
+    @Composable
+    fun ProfilePreview() {
+        AppCompatTheme {
+            ProfileDraw()
+        }
+    }
+
+    private fun showToast() {
+        Toast.makeText(
+            requireContext(),
+            resources.getString(R.string.complete_new_nickname),
+            Toast.LENGTH_SHORT
+        ).show()
+    }
+
+    private fun resultLauncherActivity() {
+        val intent = Intent(requireContext(), EditNicknameActivity::class.java)
         resultLauncher.launch(intent)
     }
 

@@ -32,12 +32,11 @@ class EditNicknameActivity : AppCompatActivity() {
 
     @Composable
     fun EditNicknameDraw() {
-        Column(modifier = Modifier.padding(20.dp)) {
-            val modifier = Modifier.fillMaxWidth()
-            var content by rememberSaveable {
-                mutableStateOf("")
-            }
+        val modifier = Modifier.fillMaxWidth()
+        var content by rememberSaveable { mutableStateOf("") }
+        val resultIntent = Intent()
 
+        Column(modifier = Modifier.padding(20.dp)) {
             OutlinedTextField(
                 modifier = modifier,
                 value = content,
@@ -45,22 +44,14 @@ class EditNicknameActivity : AppCompatActivity() {
                 singleLine = true,
                 label = { Text(text = resources.getString(R.string.input_new_nickname)) }
             )
-
             Spacer(modifier = Modifier.padding(5.dp))
-
-            val inputNickname = content
-            val resultIntent = Intent()
-
             Button(
                 modifier = modifier,
                 onClick = {
-                    resultIntent.putExtra("nickname", inputNickname)
+                    resultIntent.putExtra("nickname", content)
                     setResult(RESULT_OK, resultIntent)
                     finish()
-                }
-            ) {
-                Text(text = resources.getString(R.string.confirm_new_nickname))
-            }
+                }) { Text(text = resources.getString(R.string.confirm_new_nickname)) }
         }
     }
 
