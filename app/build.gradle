@@ -59,8 +59,11 @@ dependencies {
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.1.1'
     // When using a AppCompat theme
     implementation "com.google.accompanist:accompanist-appcompat-theme:0.16.0"
-    // Glide
+    // Glide Composable
     implementation "com.github.skydoves:landscapist-glide:1.5.3"
+    // Paging Composable
+    implementation "com.google.accompanist:accompanist-pager:0.13.0"
+    implementation "com.google.accompanist:accompanist-pager-indicators:0.13.0"
 
     // TedPermission
     implementation 'io.github.ParkSangGwon:tedpermission-normal:3.3.0'

@@ -1,4 +1,6 @@
-package com.neppplus.deliveryorderpractice_20211108.model
+package com.neppplus.deliveryorderpractice_20211108.util
+
+import com.neppplus.deliveryorderpractice_20211108.model.StoreData
 
 object DataProvider {
 

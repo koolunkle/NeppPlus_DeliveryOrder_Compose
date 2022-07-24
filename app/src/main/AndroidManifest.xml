@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
+        android:name=".util.Application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_delivery"
         android:label="@string/app_name"
@@ -32,12 +33,12 @@
             android:permission="" />
 
         <activity
-            android:name=".ui.store.info.StoreInfoActivity"
+            android:name=".ui.nickname.EditNicknameActivity"
             android:exported="true"
             android:permission="" />
 
         <activity
-            android:name=".ui.nickname.EditNicknameActivity"
+            android:name=".ui.store.info.StoreInfoActivity"
             android:exported="true"
             android:permission="" />
 

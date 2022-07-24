@@ -25,7 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.fragment.app.Fragment
 import com.google.accompanist.appcompattheme.AppCompatTheme
-import com.neppplus.deliveryorderpractice_20211108.model.DataProvider
+import com.neppplus.deliveryorderpractice_20211108.util.DataProvider
 import com.neppplus.deliveryorderpractice_20211108.model.StoreData
 import com.neppplus.deliveryorderpractice_20211108.ui.store.info.StoreInfoActivity
 import com.skydoves.landscapist.glide.GlideImage

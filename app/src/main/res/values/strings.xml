@@ -21,7 +21,6 @@
 
     <!--Profile-->
     <string name="nickname">닉네임</string>
-    <string name="koolunkle">koolunkle</string>
     <string name="change_nickname">닉네임 변경</string>
 
     <!--Store List Item-->
