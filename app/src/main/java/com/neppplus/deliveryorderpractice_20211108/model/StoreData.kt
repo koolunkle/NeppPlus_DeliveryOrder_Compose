@@ -2,7 +2,7 @@ package com.neppplus.deliveryorderpractice_20211108.model
 
 import java.io.Serializable
 
-class StoreData(
+data class StoreData(
     val name: String,
     val phoneNum: String,
     val logoURL: String,

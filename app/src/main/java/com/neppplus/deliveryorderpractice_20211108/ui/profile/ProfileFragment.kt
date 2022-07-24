@@ -65,7 +65,9 @@ class ProfileFragment : Fragment() {
         }
 
         resultLauncher =
-            rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            rememberLauncherForActivityResult(
+                ActivityResultContracts.StartActivityForResult()
+            ) {
                 if (it.resultCode == Activity.RESULT_OK) {
                     content = it.data?.getStringExtra("nickname").toString()
                     showToast()
