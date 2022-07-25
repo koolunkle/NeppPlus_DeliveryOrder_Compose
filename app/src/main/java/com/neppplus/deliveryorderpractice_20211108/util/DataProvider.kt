@@ -8,28 +8,28 @@ object DataProvider {
         StoreData(
             name = "BBQ",
             phoneNum = "1588-9282",
-            logoURL = "https://www.localview.co.kr/cp/thumbnail/106308689.jpg",
+            logoURL = "https://mblogthumb-phinf.pstatic.net/20160507_233/ppanppane_1462548783999tnIYw_PNG/Untitled-1-36.png?type=w800",
             addressLink = "https://www.bbq.co.kr/main.asp"
         ),
 
         StoreData(
             name = "네네치킨",
             phoneNum = "1599–4479",
-            logoURL = "https://pbs.twimg.com/profile_images/1108644065380163585/c6uDziTT_400x400.png",
+            logoURL = "https://localview.co.kr/cp/thumbnail/801549867.jpg",
             addressLink = "https://nenechicken.com/"
         ),
 
         StoreData(
             name = "굽네치킨",
-            phoneNum = "1688–9292",
-            logoURL = "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/06/14/16236527629390.png",
+            phoneNum = "1661–9494",
+            logoURL = "https://blog.kakaocdn.net/dn/CnUji/btqD2GqhETJ/BjmfR979cZWpZAvK5os2ZK/img.png",
             addressLink = "https://www.goobne.co.kr/index"
         ),
 
         StoreData(
             name = "페리카나",
             phoneNum = "1588–9292",
-            logoURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJTaNUsZVUd3xxYux8DQv5oxkQOtaWB1TdRi8VMOidfbU5XpvziP4WXjmuJo-DMlF2pl4&amp;usqp=CAU",
+            logoURL = "https://www.changupdo.com/data/franchise/2805/3077403606_zaC1qKeH_ED8E98EBA6AC_300.jpg",
             addressLink = "https://pelicana.co.kr/main.html"
         )
     )
@@ -45,7 +45,7 @@ object DataProvider {
         StoreData(
             name = "파파존스",
             phoneNum = "1577–8080",
-            logoURL = "http://mblogthumb2.phinf.naver.net/20160530_65/ppanppane_1464617766007O9b5u_PNG/%C6%C4%C6%C4%C1%B8%BD%BA_%C7%C7%C0%DA_%B7%CE%B0%ED_%284%29.png?type=w800",
+            logoURL = "https://blog.kakaocdn.net/dn/kSXtj/btrvW4RUV54/Mlgnf4yqOuCyN8QiMgOZWk/img.png",
             addressLink = "https://pji.co.kr/w_main"
         ),
 

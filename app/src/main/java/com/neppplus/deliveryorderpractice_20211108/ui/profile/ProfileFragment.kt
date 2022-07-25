@@ -48,10 +48,10 @@ class ProfileFragment : Fragment() {
     @Composable
     fun ProfileDraw() {
         val modifier = Modifier.fillMaxWidth()
-        var content by rememberSaveable { mutableStateOf(resources.getString(R.string.koolunkle)) }
+        var content by rememberSaveable { mutableStateOf(resources.getString(R.string.nickname)) }
 
         Column(modifier = Modifier.padding(20.dp)) {
-            Text(text = resources.getString(R.string.nickname))
+            Text(text = resources.getString(R.string.title_nickname))
             Row(
                 modifier = modifier,
                 horizontalArrangement = Arrangement.SpaceBetween,

@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity() {
     @Composable
     fun ProfileContent() {
         val modifier = Modifier.fillMaxWidth()
-        var content by rememberSaveable { mutableStateOf("") }
+        var content by rememberSaveable { mutableStateOf(resources.getString(R.string.nickname)) }
 
         resultLauncher =
             rememberLauncherForActivityResult(
@@ -128,7 +128,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         Column(modifier = Modifier.padding(20.dp)) {
-            Text(text = resources.getString(R.string.nickname))
+            Text(text = resources.getString(R.string.title_nickname))
             Row(
                 modifier = modifier,
                 horizontalArrangement = Arrangement.SpaceBetween,
