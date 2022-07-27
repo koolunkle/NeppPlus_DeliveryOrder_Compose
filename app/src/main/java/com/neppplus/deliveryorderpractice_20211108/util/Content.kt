@@ -28,7 +28,7 @@ import androidx.compose.ui.unit.dp
 import com.neppplus.deliveryorderpractice_20211108.R
 import com.neppplus.deliveryorderpractice_20211108.model.StoreData
 import com.neppplus.deliveryorderpractice_20211108.ui.nickname.EditNicknameActivity
-import com.neppplus.deliveryorderpractice_20211108.ui.store.info.StoreInfoActivity
+import com.neppplus.deliveryorderpractice_20211108.ui.store.StoreActivity
 import com.skydoves.landscapist.glide.GlideImage
 
 object Content {
@@ -74,7 +74,7 @@ object Content {
             itemsIndexed(chickenStoreList) { index, item ->
                 Box(Modifier.clickable {
                     val clickedStore = chickenStoreList[index]
-                    val intent = Intent(Application.context(), StoreInfoActivity::class.java)
+                    val intent = Intent(Application.context(), StoreActivity::class.java)
 
                     intent.putExtra("store", clickedStore)
                     Application.context().startActivity(intent.addFlags(FLAG_ACTIVITY_NEW_TASK))
@@ -122,7 +122,7 @@ object Content {
             itemsIndexed(pizzaStoreList) { index, item ->
                 Box(Modifier.clickable {
                     val clickedStore = pizzaStoreList[index]
-                    val intent = Intent(Application.context(), StoreInfoActivity::class.java)
+                    val intent = Intent(Application.context(), StoreActivity::class.java)
 
                     intent.putExtra("store", clickedStore)
                     Application.context().startActivity(intent.addFlags(FLAG_ACTIVITY_NEW_TASK))

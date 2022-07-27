@@ -8,7 +8,10 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.*
+import androidx.compose.material.Button
+import androidx.compose.material.OutlinedTextField
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.*
 import androidx.compose.runtime.mutableStateOf
@@ -16,7 +19,6 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.google.accompanist.appcompattheme.AppCompatTheme
 import com.neppplus.deliveryorderpractice_20211108.R
 
 class EditNicknameActivity : AppCompatActivity() {
@@ -24,14 +26,12 @@ class EditNicknameActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AppCompatTheme {
-                EditNicknamePreview()
-            }
+            EditNicknameContentPreview()
         }
     }
 
     @Composable
-    fun EditNicknameDraw() {
+    fun EditNicknameContent() {
         val modifier = Modifier.fillMaxWidth()
         var content by rememberSaveable { mutableStateOf("") }
         val resultIntent = Intent()
@@ -57,9 +57,9 @@ class EditNicknameActivity : AppCompatActivity() {
 
     @Preview
     @Composable
-    fun EditNicknamePreview() {
-        AppCompatTheme {
-            EditNicknameDraw()
+    fun EditNicknameContentPreview() {
+        Scaffold {
+            EditNicknameContent()
         }
     }
 

@@ -1,4 +1,4 @@
-package com.neppplus.deliveryorderpractice_20211108.ui.store.info
+package com.neppplus.deliveryorderpractice_20211108.ui.store
 
 import android.Manifest
 import android.content.Intent
@@ -14,6 +14,7 @@ import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.Button
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -29,28 +30,25 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.google.accompanist.appcompattheme.AppCompatTheme
 import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.normal.TedPermission
 import com.neppplus.deliveryorderpractice_20211108.R
 import com.neppplus.deliveryorderpractice_20211108.model.StoreData
 import com.skydoves.landscapist.glide.GlideImage
 
-class StoreInfoActivity : AppCompatActivity() {
+class StoreActivity : AppCompatActivity() {
 
     private lateinit var mStoreData: StoreData
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AppCompatTheme {
-                StoreInfoPreview()
-            }
+            StoreContentPreview()
         }
     }
 
     @Composable
-    fun StoreInfoDraw() {
+    fun StoreContent() {
         mStoreData = intent.getSerializableExtra("store") as StoreData
 
         Column(
@@ -162,9 +160,9 @@ class StoreInfoActivity : AppCompatActivity() {
 
     @Preview
     @Composable
-    fun StoreInfoPreview() {
-        AppCompatTheme {
-            StoreInfoDraw()
+    fun StoreContentPreview() {
+        Scaffold {
+            StoreContent()
         }
     }
 
@@ -178,7 +176,7 @@ class StoreInfoActivity : AppCompatActivity() {
 
             override fun onPermissionDenied(deniedPermissions: MutableList<String>?) {
                 Toast.makeText(
-                    this@StoreInfoActivity,
+                    this@StoreActivity,
                     resources.getString(R.string.permission_denied),
                     Toast.LENGTH_SHORT
                 ).show()

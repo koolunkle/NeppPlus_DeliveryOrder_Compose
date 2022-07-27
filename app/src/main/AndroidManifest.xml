@@ -34,7 +34,7 @@
             android:permission="" />
 
         <activity
-            android:name=".ui.store.info.StoreInfoActivity"
+            android:name=".ui.store.StoreActivity"
             android:exported="true"
             android:permission="" />
 
