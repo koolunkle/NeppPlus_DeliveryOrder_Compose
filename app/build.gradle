@@ -64,6 +64,10 @@ dependencies {
     // Paging Composable
     implementation "com.google.accompanist:accompanist-pager:0.13.0"
     implementation "com.google.accompanist:accompanist-pager-indicators:0.13.0"
+    // Lottie Composable
+    implementation "com.airbnb.android:lottie-compose:5.2.0"
+    // Navigation Composable
+    implementation 'androidx.navigation:navigation-compose:2.5.0'
 
     // TedPermission
     implementation 'io.github.ParkSangGwon:tedpermission-normal:3.3.0'

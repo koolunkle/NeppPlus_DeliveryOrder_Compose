@@ -18,19 +18,15 @@
         tools:targetApi="m">
 
         <activity
-            android:name=".ui.splash.SplashActivity"
-            android:exported="true">
+            android:name="com.neppplus.deliveryorderpractice_20211108.ui.main.MainActivity"
+            android:exported="true"
+            android:permission="">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".ui.main.MainActivity"
-            android:exported="true"
-            android:permission="" />
 
         <activity
             android:name=".ui.nickname.EditNicknameActivity"
